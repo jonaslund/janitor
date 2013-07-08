@@ -1,0 +1,24 @@
+{
+  "name": "Janitor",
+  "description": "Janitor, an amazing image display thingy",
+  "version": "0.1",
+  "main": "index.html",
+  "node-remote": "",
+  "single-instance": true,
+  //"node-main": "js/server.js",
+  "window": {    
+    "toolbar": true,
+    "width": 1000,
+    "height": 600,
+    "position": "center",
+    "min_width": 400,
+    "min_height": 200,
+    "icon": "janitor.png",
+    "show": true,
+    "resizable": true
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "chromium-args": "--disable-gpu"
+}
