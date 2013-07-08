@@ -20,5 +20,15 @@
   "webkit": {
     "plugin": true
   },
-  "chromium-args": "--disable-gpu"
+  "chromium-args": "--disable-gpu",
+  "maintainers":[ {
+   "name": "Jonas Lund",
+   "email": "newjonaslund@gmail.com",
+   "web": "http://jonaslund.biz"
+  },
+  {
+   "name": "Harm van den Dorpel",
+   "email": "xxx",
+   "web": "xxx"
+  }]
 }

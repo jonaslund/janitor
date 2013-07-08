@@ -23,29 +23,25 @@ $(window).hashchange( function(){
     }
 
   } else if(nav.match(/play\/id=/gi)) {
-    $("#main").load("views/play.html");
-  
+    $("#main").load("views/play.html");  
     var bid = nav.substr(12);
     if(bid) {
       db.find({_id: bid}, function(err, res) {        
         //call Janitor Init
+        //to start play
         janitorInit(res);
       });
     }  
   } else {
     //home
-    db.find({}, function(err, docs) {
-      console.log(docs);
-                  
-      //<form id="newBucket" action="/"><input type="file" id="folder" nwdirectory/><input type="submit" value="go" /></form>
-          
+    db.find({}, function(err, docs) {                            
       $("#main").html(buckets_view({ buckets: docs }));
-
     });
   } 
 
 });
 
+//newBucket
 $("#newBucket").submit(function() {
   var path = $("#folder").val();
   var title = path.substr(path.lastIndexOf("/")+1);
@@ -91,11 +87,6 @@ function saveBucket(title, path, callback) {
   //get the images  
 }
 
-// saveBucket("CEPEBARN", "/Users/jonas/v/janitor/janitor_bucket", function(asd) {
-//   console.log("fitta");
-// });
-
-
 function isImage(filename) {
   var ex = filename.split(".");
   if(ex[1].match(/jpeg|png|jpg|gif/gi)) {
@@ -105,10 +96,8 @@ function isImage(filename) {
   }
 }
 
-//create bucket
-//save bucket
 //delete bucket
-
 //reorder bucket images
 //add bucket images
 //remove bucket images
+//set bucket image properties
