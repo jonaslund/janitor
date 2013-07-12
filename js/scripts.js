@@ -1,11 +1,9 @@
 var fs = require("fs"),
     Datastore = require('nedb'),
-    db = new Datastore({ filename: '/Users/jonas/v/janitor/janitordb', autoload: true });
+    db = new Datastore({ filename: 'janitordb', autoload: true });
 
 //get views through hashes
 var nav = window.location.hash;
-
-//http://api.theartworld.org
 
 $(window).hashchange( function(){
   console.log( location.hash );
