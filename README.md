@@ -6,9 +6,9 @@ Prerequisites
 
 you need nodejs if you don't have it
 
-run in dir
-npm install nedb
-npm install jade
+run in dir <br/>
+npm install nedb <br/>
+npm install jade <br/>
 
 (couldn't put them in the package.json due to node-webkit using it)
 
