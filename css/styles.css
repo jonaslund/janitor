@@ -57,9 +57,14 @@ body {font: 16px/1.2 sans-serif; color: #000; margin: 20px; background: #ccc;}
 h1,h2,h3 {font-size: 16px; font-weight: normal;}
 a {color: blue; text-decoration: none;}
 
-.bucket {width: 300px; height: 300px; overflow: hidden; float: left; margin: 0 20px 20px 0; position: relative;}
-.bucket img {width: 500px;}
-.bucket .title {position: absolute; top: 10px; left: 10px; width: 100%;}
+.bucket {width: 400px; min-height: 290px; float: left; margin: 0 20px 20px 0; position: relative;}
+
+.bucket .icon  {width: 400px; height: 280px; overflow: hidden;}
+.bucket .icon img {width: 400px;}
+.bucket .title {margin-bottom: 5px;}
+/*.bucket .title {position: absolute; top: 10px; left: 10px; width: 100%;}*/
+
+.bucketform {background: rgb(220,220,220); padding: 10px; min-height: 290px;}
 
 .deleteBucket {position: absolute; top: 0; right :0; font-weight: bold; color: red !important;}
 
