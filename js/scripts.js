@@ -49,9 +49,8 @@ $("#main").on("submit", '#newBucket', function() {
   var title = path.substr(path.lastIndexOf("/")+1);
 
   saveBucket(title, path, function() {
-
-  });
-  
+    
+  });  
   return false;
 });
 
@@ -96,14 +95,13 @@ function saveBucket(title, path, callback) {
 }
 
 //bind delete
- $("#main").on( "click", '.deleteBucket', function(event) { 
-  var thisDelete = $(event.target);
-  var thisID = $(event.target).attr("data-id");
+ $("#main").on( "click", '.deleteBucket', function(event) {   
+  var thisID = $(this).attr("data-id");
 
   var r=confirm("U sure u wanna remove?");  
   if (r===true) {
     deleteBucket(thisID);
-    $(thisDelete).parent(".bucket").remove();
+    $(this).parent(".bucket").remove();
   }
 
   return false;
