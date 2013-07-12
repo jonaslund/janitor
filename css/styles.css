@@ -57,19 +57,20 @@ body {font: 16px/1.2 sans-serif; color: #000; margin: 20px; background: #ccc;}
 h1,h2,h3 {font-size: 16px; font-weight: normal;}
 a {color: blue; text-decoration: none;}
 
-.bucket {width: 400px; min-height: 290px; float: left; margin: 0 20px 20px 0; position: relative;}
+.bucket {width: 400px; height: 300px; overflow: hidden; float: left; margin: 0 20px 20px 0; position: relative;}
 
 .bucket .icon  {width: 400px; height: 280px; overflow: hidden;}
 .bucket .icon img {width: 400px;}
 .bucket .title {margin-bottom: 5px;}
 /*.bucket .title {position: absolute; top: 10px; left: 10px; width: 100%;}*/
 
-.bucketform {background: rgb(220,220,220); padding: 10px; min-height: 290px;}
+.bucketform {background: rgb(220,220,220); height: 300px;}
 
 .deleteBucket {position: absolute; top: 0; right :0; font-weight: bold; color: red !important;}
 
 ul {margin: 0; padding: 0;}
 .singleBucket li {height: 150px; padding: 10px 0; border-bottom: 1px solid #000; list-style: none;}
 .singleBucket li img {max-height: 150px}
-
+#newBucket {display: none;}
+.newBucket {font-size: 220px; color: rgb(128,128,128); font-weight: bold; display: block; text-align: center; line-height: 300px;}
 

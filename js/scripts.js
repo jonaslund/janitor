@@ -13,8 +13,7 @@ $(window).hashchange( function(){
     
   //load single buckets view  
   if(nav.match(/bucket\/id=/gi)) {
-    $("#main").load("views/play.html");
-  
+    
     var id = nav.substr(12);
     if(id) {
       db.find({_id: id}, function(err, res) {        
@@ -49,13 +48,21 @@ $("#main").on("submit", '#newBucket', function() {
   var title = path.substr(path.lastIndexOf("/")+1);
 
   saveBucket(title, path, function() {
-    
   });  
+
   return false;
 });
 
 //trigger onload
 $(window).hashchange();
+
+$("#main").on("click", '.newBucket', function() {
+  $("#folder").trigger("click");
+  return false;
+});
+$("#main").on("change", "#folder", function() {
+  $("#newBucket").trigger("submit");
+});
 
 /**
  * [saveBucket]
@@ -112,6 +119,7 @@ function deleteBucket(id) {
   console.log(numRemoved);
  });
 }
+
 
 
 /**
