@@ -69,8 +69,10 @@ a {color: blue; text-decoration: none;}
 .deleteBucket {position: absolute; top: 0; right :0; font-weight: bold; color: red !important;}
 
 ul {margin: 0; padding: 0;}
-.singleBucket li {height: 150px; padding: 10px 0; border-bottom: 1px solid #000; list-style: none;}
-.singleBucket li img {max-height: 150px}
+#singleBucket li {height: 150px; padding: 10px 0; /*list-style: decimal;*/ list-style: none; padding-left: 20px; position: relative;}
+#singleBucket li:nth-child(even) {background: rgb(220,220,220);}
+#singleBucket li img {max-height: 150px}
+.deleteImage {position: absolute; top: 0; right: 0; color: red;}
 #newBucket {display: none;}
 .newBucket {font-size: 220px; color: rgb(128,128,128); font-weight: bold; display: block; text-align: center; line-height: 300px;}
 

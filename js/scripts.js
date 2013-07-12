@@ -13,7 +13,7 @@ $(window).hashchange( function(){
     
   //load single buckets view  
   if(nav.match(/bucket\/id=/gi)) {
-    
+
     var id = nav.substr(12);
     if(id) {
       db.find({_id: id}, function(err, res) {        
@@ -102,7 +102,7 @@ function saveBucket(title, path, callback) {
 }
 
 //bind delete
- $("#main").on( "click", '.deleteBucket', function(event) {   
+$("#main").on( "click", '.deleteBucket', function(event) {   
   var thisID = $(this).attr("data-id");
 
   var r=confirm("U sure u wanna remove?");  
@@ -114,13 +114,28 @@ function saveBucket(title, path, callback) {
   return false;
 });
 
+/**
+ * [deleteBucket]
+ * @param  {[str]} id
+ * @return {[int]}    [Number Of Records Removed]
+ */
 function deleteBucket(id) {
  db.remove({ _id: id}, {}, function (err, numRemoved) {
   console.log(numRemoved);
  });
 }
 
-
+/**
+ * [updateBucket]
+ * @param  {[str]} id      
+ * @param  {[json]} updates 
+ * @return {[int]}  rows altered        
+ */
+function updateBucket(id, updates) {
+  db.update({_id: id}, updates, function (err, numReplaced) {
+    console.log(numReplaced);
+  });
+}
 
 /**
  * [isImage]
@@ -136,8 +151,37 @@ function isImage(filename) {
   }
 }
 
-//delete bucket
-//reorder bucket images
+//sortable bucket
+$("#main").on("mouseenter", ".images", function() {
+  $(".images").sortable({
+    stop : function() {
+      var sortedArray = [];
+       $(".images li").each(function() {
+        sortedArray.push({image: $(this).find("img").attr("data-filename")});
+      });
+      
+      updateBucket($("#singleBucket").attr("data-id"), { $set: { images: sortedArray }});
+    }
+  });
+});
+
+$("#main").on("click", ".deleteImage", function() {
+  var r=confirm("U sure u wanna remove?");  
+  if (r===true) {
+
+    $(this).parent("li").remove();
+
+    var sortedArray = [];
+     $(".images li").each(function() {
+      sortedArray.push({image: $(this).find("img").attr("data-filename")});
+    });
+
+    updateBucket($("#singleBucket").attr("data-id"), { $set: { images: sortedArray }});
+  }
+  
+  return false;
+});
+
 //add bucket images
 //remove bucket images
 //set bucket image properties
