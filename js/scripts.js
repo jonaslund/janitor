@@ -75,9 +75,12 @@ function saveBucket(title, path, callback) {
   console.log("SAVING", title, path);
 
   fs.readdir(path, function(err, files) {
+    console.log(files);
+
     //process and insert
     (function p(i) {
       if(i < files.length) {
+
         if(isImage(files[i])) {
           imagesarr.push({"image": files[i]});
           p(i+1);
@@ -87,7 +90,12 @@ function saveBucket(title, path, callback) {
         }
 
       } else {
-        //done                      
+        
+        //no images in folder, either throw error or auto populate
+        if(imagesarr.length === 0) {
+          imagesarr.push({image: "error.png"});
+        }
+
         var bucket = {title: title, path: path, images: imagesarr};        
         
         db.insert(bucket, function (err, newDoc) {             
@@ -143,12 +151,11 @@ function updateBucket(id, updates) {
  * @return {Boolean}
  */
 function isImage(filename) {
-  var ex = filename.split(".");
-  if(ex[1].match(/jpeg|png|jpg|gif/gi)) {
+  if(filename.match(/\.(jpeg|jpg|gif|png)$/)) {
     return 1;
   } else {
     return 0;
-  }
+  }  
 }
 
 //sortable bucket
@@ -178,10 +185,10 @@ $("#main").on("click", ".deleteImage", function() {
 
     updateBucket($("#singleBucket").attr("data-id"), { $set: { images: sortedArray }});
   }
-  
+
   return false;
 });
 
 //add bucket images
-//remove bucket images
 //set bucket image properties
+
