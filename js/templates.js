@@ -6,7 +6,7 @@ var buckets_view = jade.compile([
     '      .icon',
     '        img(src="#{bucket.path}/#{bucket.images[0].image}")',
     '      .title #{bucket.title}',
-    '      a.delete Delete Bucket',    
+    '    a.deleteBucket(data-id="#{bucket._id}", href="#") &times;',
     '.bucket',
     '  h1 Add New Bucket +++',
     '    form(id="newBucket")',

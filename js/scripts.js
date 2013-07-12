@@ -5,6 +5,8 @@ var fs = require("fs"),
 //get views through hashes
 var nav = window.location.hash;
 
+//http://api.theartworld.org
+
 $(window).hashchange( function(){
   console.log( location.hash );
   nav = location.hash;
@@ -42,7 +44,7 @@ $(window).hashchange( function(){
 });
 
 //newBucket
-$("#newBucket").submit(function() {
+$("#main").on("submit", '#newBucket', function() {
   var path = $("#folder").val();
   var title = path.substr(path.lastIndexOf("/")+1);
 
@@ -56,6 +58,12 @@ $("#newBucket").submit(function() {
 //trigger onload
 $(window).hashchange();
 
+/**
+ * [saveBucket]
+ * @param  {[str]}   title   
+ * @param  {[str]}   path    
+ * @param  {Function} callback 
+ */
 function saveBucket(title, path, callback) {
   var imagesarr = [];
   console.log("SAVING", title, path);
@@ -87,6 +95,32 @@ function saveBucket(title, path, callback) {
   //get the images  
 }
 
+//bind delete
+ $("#main").on( "click", '.deleteBucket', function(event) { 
+  var thisDelete = $(event.target);
+  var thisID = $(event.target).attr("data-id");
+
+  var r=confirm("U sure u wanna remove?");  
+  if (r===true) {
+    deleteBucket(thisID);
+    $(thisDelete).parent(".bucket").remove();
+  }
+
+  return false;
+});
+
+function deleteBucket(id) {
+ db.remove({ _id: id}, {}, function (err, numRemoved) {
+  console.log(numRemoved);
+ });
+}
+
+
+/**
+ * [isImage]
+ * @param  {[str]}  filename
+ * @return {Boolean}
+ */
 function isImage(filename) {
   var ex = filename.split(".");
   if(ex[1].match(/jpeg|png|jpg|gif/gi)) {

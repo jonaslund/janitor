@@ -61,6 +61,7 @@ a {color: blue; text-decoration: none;}
 .bucket img {width: 500px;}
 .bucket .title {position: absolute; top: 10px; left: 10px; width: 100%;}
 
+.deleteBucket {position: absolute; top: 0; right :0; font-weight: bold; color: red !important;}
 
 
 
