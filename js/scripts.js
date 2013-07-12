@@ -75,8 +75,6 @@ function saveBucket(title, path, callback) {
   console.log("SAVING", title, path);
 
   fs.readdir(path, function(err, files) {
-    console.log(files);
-
     //process and insert
     (function p(i) {
       if(i < files.length) {
@@ -175,20 +173,61 @@ $("#main").on("mouseenter", ".images", function() {
 $("#main").on("click", ".deleteImage", function() {
   var r=confirm("U sure u wanna remove?");  
   if (r===true) {
+    if($(".images li").size() === 1) {
+      alert("You can't remove the last picture");
+    } else {
+  
+      $(this).parent("li").remove();
 
-    $(this).parent("li").remove();
+      var sortedArray = [];
+       $(".images li").each(function() {
+        sortedArray.push({image: $(this).find("img").attr("data-filename")});
+      });
 
-    var sortedArray = [];
-     $(".images li").each(function() {
-      sortedArray.push({image: $(this).find("img").attr("data-filename")});
-    });
-
-    updateBucket($("#singleBucket").attr("data-id"), { $set: { images: sortedArray }});
+      updateBucket($("#singleBucket").attr("data-id"), { $set: { images: sortedArray }});      
+    }
   }
 
   return false;
 });
 
-//add bucket images
-//set bucket image properties
+//reload folder
+$("#main").on("click", ".reloadBucket", function() {
+  var path = $("#singleBucket").attr("data-path");
+  var id = $("#singleBucket").attr("data-id");
+  var imagesarr = [];
+  
+  fs.readdir(path, function(err, files) {  
+    //process and insert
+    (function p(i) {
+      if(i < files.length) {
 
+        if(isImage(files[i])) {
+          imagesarr.push({"image": files[i]});
+          p(i+1);
+                
+        } else {
+          p(i+1);
+        }
+
+      } else {
+        
+        //no images in folder, either throw error or auto populate
+        if(imagesarr.length === 0) {
+          imagesarr.push({image: "error.png"});
+        }
+
+
+        updateBucket(id, { $set: { images: imagesarr }});
+
+        //reload page
+        window.location.hash = "/bucket/id=" + id;
+      }
+
+    })(0);
+  });
+
+});
+
+//reload folder
+//set bucket image properties

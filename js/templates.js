@@ -16,12 +16,13 @@ var buckets_view = jade.compile([
 ].join('\n'));
 
 var bucket_view = jade.compile([
-  '#singleBucket(data-id="#{bucket._id}")',
+  '#singleBucket(data-id="#{bucket._id}", data-path="#{bucket.path}")',
   '  h1.title #{bucket.title}',
   '  a(href="#/play/id=#{bucket._id}") PLAY BUCKET',
   '  ul.images',
   '    - each image in bucket.images',
   '      li.image',
   '        img(src="#{bucket.path}/#{image.image}", data-filename="#{image.image}" )',
-  '        a.deleteImage(href="#") &times;'
+  '        a.deleteImage(href="#") &times;',
+  '  a.reloadBucket(href="#") RELOAD FOLDER'
 ].join('\n'));
