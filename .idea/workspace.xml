@@ -2,19 +2,30 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/home.html" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/js/janitor.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/views/play.html" afterPath="$PROJECT_DIR$/views/play.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="janitor.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375430111404" ignored="false" />
-    <file path="$USER_HOME$/campanda/campanda/public/css/campanda-all.css" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375436855263" ignored="false" />
-    <file path="$USER_HOME$/campanda/campanda/public/js/lib/modules/mietwunsch.js" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375436750781" ignored="false" />
+    <file path="/Dummy.txt" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375463846702" ignored="false" />
+    <file path="$USER_HOME$/campanda/campanda/public/css/campanda-all.css" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375452728770" ignored="false" />
+    <file path="$USER_HOME$/campanda/campanda/public/js/lib/modules/mietwunsch.js" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375455254958" ignored="false" />
     <file path="$USER_HOME$/campanda/campanda/public/less/modules/season-calendar.less" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375433428126" ignored="false" />
-    <file path="/mietwunsch.js" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375436748917" ignored="false" />
+    <file path="/mietwunsch.js" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375454881698" ignored="false" />
     <file path="$USER_HOME$/campanda/campanda/module/Application/view/layout/layout.phtml" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375435075592" ignored="false" />
     <file path="$USER_HOME$/campanda/campanda/module/Application/src/Application/Form/MietwunschForm.php" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375441853100" ignored="false" />
-    <file path="$USER_HOME$/campanda/campanda/module/Application/view/application/mietwunsch/index.phtml" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375441889479" ignored="false" />
-    <file path="/index.phtml" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375441774448" ignored="false" />
+    <file path="$USER_HOME$/campanda/campanda/module/Application/view/application/mietwunsch/index.phtml" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375456133117" ignored="false" />
+    <file path="/index.phtml" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375446864919" ignored="false" />
+    <file path="/play.html" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375443420490" ignored="false" />
+    <file path="/janitor.js" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375443430033" ignored="false" />
+    <file path="$USER_HOME$/campanda/campanda/public/js/lib/modules/offer-price-calculation.js" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375454734741" ignored="false" />
+    <file path="/offer-price-calculation.js" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375454729989" ignored="false" />
+    <file path="$USER_HOME$/campanda/campanda/public/js/lib/modules/various-ui.js" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375454684187" ignored="false" />
+    <file path="/various-ui.js" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375454682857" ignored="false" />
+    <file path="$USER_HOME$/campanda/campanda/public/js/app.js" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375454706826" ignored="false" />
+    <file path="/app.js" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375454695618" ignored="false" />
+    <file path="$USER_HOME$/campanda/campanda/module/Application/view/layout/login-modal.phtml" changelist="d867abf3-43ba-48b3-b2c2-af3a3d63eca0" time="1375455335447" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,7 +48,16 @@
       <file leaf-file-name="package.json" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/package.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="18" column="67" selection-start="318" selection-end="385" vertical-scroll-proportion="0.3708791">
               <folding />
             </state>
           </provider>
@@ -55,16 +75,25 @@
       <file leaf-file-name="scripts.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/scripts.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="29" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.0">
+            <state line="69" column="29" selection-start="1602" selection-end="1602" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="play.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="play.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/play.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="31" selection-start="260" selection-end="260" vertical-scroll-proportion="0.10458168">
+            <state line="6" column="0" selection-start="112" selection-end="112" vertical-scroll-proportion="-3.75">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="janitor.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/janitor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="3" column="0" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -88,6 +117,7 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
+        <option value="$PROJECT_DIR$/js/janitor.js" />
         <option value="$PROJECT_DIR$/views/play.html" />
       </list>
     </option>
@@ -95,8 +125,8 @@
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
     <option name="y" value="22" />
-    <option name="width" value="1920" />
-    <option name="height" value="1174" />
+    <option name="width" value="1440" />
+    <option name="height" value="874" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -210,14 +240,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="22" width="1920" height="1174" extended-state="6" />
+    <frame x="0" y="22" width="1440" height="874" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20651014" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20946915" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="!tool.window.name.run!" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -295,11 +325,6 @@
     <breakpoint-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="24" column="0" selection-start="498" selection-end="513" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
@@ -316,14 +341,49 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/scripts.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="29" selection-start="1554" selection-end="1554" vertical-scroll-proportion="0.0">
+        <state line="69" column="29" selection-start="1602" selection-end="1602" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="31" column="38" selection-start="599" selection-end="599" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/scripts.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="69" column="29" selection-start="1602" selection-end="1602" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/janitor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="3" column="0" selection-start="53" selection-end="53" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/views/play.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="31" selection-start="260" selection-end="260" vertical-scroll-proportion="0.10458168">
+        <state line="6" column="0" selection-start="112" selection-end="112" vertical-scroll-proportion="-3.75">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/package.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="67" selection-start="318" selection-end="385" vertical-scroll-proportion="0.3708791">
           <folding />
         </state>
       </provider>
