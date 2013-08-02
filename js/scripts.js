@@ -23,11 +23,13 @@ $(window).hashchange( function(){
 
   } else if(nav.match(/play\/id=/gi)) {
     $("#main").load("views/play.html");  
-    var bid = nav.substr(12);
+    var bid = nav.substr(10);
+    console.log(bid);
     if(bid) {
       db.find({_id: bid}, function(err, res) {        
         //call Janitor Init
         //to start play
+        console.log(res);
         janitorInit(res);
       });
     }  
