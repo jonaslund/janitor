@@ -1,0 +1,100 @@
+<!doctype html>
+<html>
+    <head>
+
+        <style>
+
+
+
+            #shaded-element {
+                -webkit-filter: custom(
+                    url(http://s.cdpn.io/28727/tripanel-reveal_4.vs)
+                    mix(url(http://s.cdpn.io/28727/tripanel-reveal_2.fs) difference source-atop),
+                    1 1,
+                    t 1,
+                    firstColor 109 99 152 255,
+                    secondColor 252 194 64 255,
+                    thirdColor 191 75 49 255
+                );
+                -webkit-transition: -webkit-filter 1s ease-out;
+                -webkit-transform: translateZ(0);
+
+                width: 400px;
+                height: 400px;
+                padding: 20px;
+                border: 1px solid #ccc;
+                border-radius: 20px;
+                box-shadow: inset 4px 4px 6px rgba(0%, 0%, 0%, 0.2);
+                background-image: url(http://upload.wikimedia.org/wikipedia/commons/2/21/Catopsilia_pyranthe_male%2C_Burdwan%2C_West_Bengal%2C_India_14_09_2012.jpg);
+                background-size: auto 100%;
+            }
+
+
+
+            #shaded-element h1 {
+                margin: 0px;
+                width: 50%;
+                color: white;
+                text-align: center;
+            }
+
+            * {
+                font-family: 'Pontano Sans', sans-serif;
+                font-weight: normal;
+                margin: 0px;
+            }
+
+            body {
+                background-color: #ccc;
+                margin-top: 10px;
+                margin-left: 10px;
+            }
+
+            body > * {
+                margin-bottom: 10px;
+            }
+
+            h1 {
+                font-size: 50px;
+            }
+
+        </style>
+
+    </head>
+    <body>
+
+
+        <div id="shaded-element">
+            <h1>Catopsilia Pyranthe</h1>
+        </div>
+
+
+
+        <script>
+            var rule = findRuleBySelector("#shaded-element");
+            var hoveredRule = findRuleBySelector("#shaded-element:hover");
+            var initialBlendMode = "color";
+            var initialFilterStyle = rule.style.webkitFilter;
+            var initialHoveredFilterStyle = hoveredRule.style.webkitFilter;
+            var blendModeSelectBox = document.getElementById("blendModeSelectBox");
+
+            blendModeSelectBox.onchange = function() {
+                var newBlendMode = this.options[this.selectedIndex].text;
+                rule.style.webkitFilter = initialFilterStyle.replace(initialBlendMode, newBlendMode);
+                hoveredRule.style.webkitFilter = initialHoveredFilterStyle.replace(initialBlendMode, newBlendMode);
+            }
+
+            function findRuleBySelector(selector)
+            {
+                var cssRules = document.styleSheets[0].cssRules;
+                for (var i = 0; i < cssRules.length; i++)
+                {
+                    if (cssRules[i].selectorText == selector)
+                        return cssRules[i];
+                }
+                return null;
+            }
+
+        </script>
+    </body>
+</html>

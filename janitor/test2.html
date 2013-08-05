@@ -1,0 +1,67 @@
+<!doctype html>
+
+<html>
+    <head>
+        <script src='js/jquery-2.0.3.min.js'></script>
+
+        <script>
+            
+            $(document).ready(function() {
+                var $img = $("#i1");
+                
+    
+                var phase = 0;
+                
+                $img.click(function() {
+                    phase = 1;
+                    console.log('A');
+                    $(this).css('-webkit-transform','scale(1.25)');
+                    //$(this).css('opacity','1');
+                });
+                
+                $img.bind('webkitTransitionEnd', function(e) {
+                    console.log('phase = ' + phase);
+                    console.log(e.propertyName);
+                    switch (phase) {
+                        case 1:
+                            $(this).css('-webkit-transform','scale(1.5)');        
+                            break;
+                        case 2:
+                       //     $(this).css('opacity','0');
+                         //   $(this).css('-webkit-transform','scale(1.75)');
+                            break;
+                    }
+                    
+                    phase++;
+                });
+                
+            });
+            
+        </script>
+        
+        <style>
+            * {
+                -webkit-transform: translateZ(0);
+                -webkit-backface-visibility: hidden;
+
+            }
+            
+            #i1 {
+                width:800px;
+               
+                -webkit-transform: scale(1);
+                -webkit-transition: all linear;
+                -webkit-transition-duration: 8s;
+                opacity:0.01;
+                left:0;
+                top:0;
+                position:absolute;
+                    
+            }
+        </style>
+    </head>
+    <body>
+    
+        <img src='images/ReleaseEarlyAbrons_10_tribalized.jpg' id='i1'>
+    </body>
+</html>
