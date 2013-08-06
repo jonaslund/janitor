@@ -1,8 +1,156 @@
+<script src='janitor/js/jquery-2.0.3.min.js'></script>
+<script src='janitor/js/jquery.transit.js'></script>
 <script src='js/janitor.js'></script>
 <script>
 
   function janitorInit(bucket) {
-    new Janitor(bucket);
+    //new Janitor(bucket);
+          var programIndex = null;
+          var s = {};
+          var path = 'images/';
+          var programData = null;
+          
+          $(window).resize(function() {
+              s = {
+                  width: $(window).width(),
+                  height: $(window).height()
+              }
+          }); 
+          
+          $(window).resize();
+          
+          function scaleAndCenter(img) {
+              var ratio = img.width / img.height;
+              
+              if (s.width / ratio < s.height) {
+                  img.height = s.height;
+                  img.width  = s.height * ratio;
+              } else {
+                  img.width  = s.width;
+                  img.height = s.width / ratio;
+              }
+              
+              $(img).offset({
+                  left: (s.width  - img.width)  / 2,
+                  top:  (s.height - img.height) / 2
+              });
+              
+          }
+          
+          
+          function oneImage(filename, $parent, callback) {
+
+              var phase = 0;
+              
+              var blendmodes = [
+                  'normal',
+                  'difference',
+                  'darken',
+                  'lighten',
+                  'multiply',
+                  'normal',
+                  'multiply'
+              ];
+              
+              var $img = $(new Image());
+              
+              $img.load(function() {
+
+
+                  var blendmode = blendmodes[Math.round(Math.random()*(blendmodes.length-1))];
+                  console.log(blendmode);
+
+
+
+
+                  $(this).css('-webkit-blend-mode',blendmode);
+                  scaleAndCenter(this);
+                  callback("startfadein");
+                  phase++;
+                  $(this).transition({
+                      '-webkit-transform' : 'scale(1.25)',
+                      '-webkit-opacity' :'1',
+                      duration : 5000,
+                      easing: 'linear',
+                      complete : function() {   
+                          if (phase == 2) {
+                              callback('fadeincomplete');
+                          }
+                          phase++;
+                      } 
+                  });
+                  
+                  $(this).transition({
+                      '-webkit-transform' : 'scale(1.375)',
+                      duration : 2500,
+                      easing: 'linear',
+                      complete : function() {
+                          if (phase == 4) {
+                              callback('halfway');
+                          }
+                          phase++;
+                      } 
+                  });
+                  
+                   $(this).transition({
+                      '-webkit-transform' : 'scale(1.50)',
+                      duration : 2500,
+                      easing: 'linear',
+                      complete : function() {
+                          if (phase == 6) {
+                              callback('startfadeout');
+                          }
+                          phase++;
+                      } 
+                  });
+                  
+                  
+                  $(this).transition({
+                      '-webkit-transform' : 'scale(2.00)',
+                      '-webkit-opacity' :'0',
+                      duration : 10000,
+                      easing: 'linear',
+                      complete : function() {
+                          if (phase == 8) {
+
+                              console.log('kill!');
+                              $(this).remove();
+                              callback('done');
+                          }
+                          phase++;                            
+                      } 
+                  });
+              })
+                  .attr('id', 'i1')
+                  .attr('src', filename);
+              
+              $parent.append($img);
+              
+          }
+      
+          programData = bucket[0].images;
+          programIndex = Math.round(Math.random() * bucket[0].images.length);
+          
+          runAnimation();
+
+          function runAnimation() {
+              console.log('runAnimation');
+              
+              oneImage(bucket[0].path + "/" + programData[programIndex].image, $('body'), function(phase, source) {
+                  switch (phase) {
+                      case 'fadeincomplete':
+                          programIndex++;
+                          if (programIndex > programData.length) {
+                              programIndex = 0;
+                          }
+                          runAnimation();
+                          break;
+
+                  }
+              });
+          }
+                
+
   }  
 
 </script>
