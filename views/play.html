@@ -148,12 +148,12 @@
 
           function runAnimation() {
               console.log('runAnimation');
-              
+
               oneImage(bucket[0].path + "/" + programData[programIndex].image, $('body'), function(phase, source) {
                   switch (phase) {
                       case 'fadeincomplete':
                           programIndex++;
-                          if (programIndex > programData.length) {
+                          if (programIndex == programData.length) {
                               programIndex = 0;
                           }
                           runAnimation();

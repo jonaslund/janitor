@@ -155,6 +155,7 @@ function updateBucket(id, updates) {
  */
 function isImage(filename) {
   if(filename.match(/\.(jpeg|jpg|gif|png)$/)) {
+    console.log(filename);
     return 1;
   } else {
     return 0;
