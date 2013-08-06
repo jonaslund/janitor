@@ -80,7 +80,12 @@ function saveBucket(title, path, callback) {
       if(i < files.length) {
 
         if(isImage(files[i])) {
-          imagesarr.push({"image": files[i]});
+          imagesarr.push({
+            image: files[i],
+            transition: "normal",
+            time: 5
+          });
+          
           p(i+1);
                 
         } else {
@@ -162,12 +167,29 @@ $("#main").on("mouseenter", ".images", function() {
     stop : function() {
       var sortedArray = [];
        $(".images li").each(function() {
-        sortedArray.push({image: $(this).find("img").attr("data-filename")});
+        sortedArray.push({
+          image: $(this).find("img").attr("data-filename"), 
+          transition: $(this).find(".transition").val(),
+          time: $(this).find(".time").val()
+        });
       });
       
       updateBucket($("#singleBucket").attr("data-id"), { $set: { images: sortedArray }});
     }
   });
+});
+
+$("#main").on("change", "select", function() {
+  var sortedArray = [];
+   $(".images li").each(function() {
+    sortedArray.push({
+      image: $(this).find("img").attr("data-filename"), 
+      transition: $(this).find(".transition").val(),
+      time: $(this).find(".time").val()
+    });
+  });
+  
+  updateBucket($("#singleBucket").attr("data-id"), { $set: { images: sortedArray }});
 });
 
 $("#main").on("click", ".deleteImage", function() {
@@ -181,7 +203,11 @@ $("#main").on("click", ".deleteImage", function() {
 
       var sortedArray = [];
        $(".images li").each(function() {
-        sortedArray.push({image: $(this).find("img").attr("data-filename")});
+        sortedArray.push({
+          image: $(this).find("img").attr("data-filename"), 
+          transition: $(this).find(".transition").val(),
+          time: $(this).find(".time").val()
+        });
       });
 
       updateBucket($("#singleBucket").attr("data-id"), { $set: { images: sortedArray }});      
@@ -203,7 +229,12 @@ $("#main").on("click", ".reloadBucket", function() {
       if(i < files.length) {
 
         if(isImage(files[i])) {
-          imagesarr.push({"image": files[i]});
+          imagesarr.push({
+            image: files[i],
+            transition: "normal",
+            time: 5
+          });
+
           p(i+1);
                 
         } else {
