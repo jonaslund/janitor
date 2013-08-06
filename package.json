@@ -20,7 +20,7 @@
   "webkit": {
     "plugin": true
   },
-  "chromium-args": "--disable-gpu",
+  "chromium-args": "--enable-css-shaders",
   "maintainers":[ {
    "name": "Jonas Lund",
    "email": "newjonaslund@gmail.com",
